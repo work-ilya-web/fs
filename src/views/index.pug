@@ -1,0 +1,110 @@
+extends layouts/default
+include helpers/mixins
+include ../blocks/components/card/card-md.pug
+include ../blocks/components/card/card-small.pug
+
+block variables
+	- const title = "Главная"
+	- const name = "main-page"
+
+block content
+	//- hero block
+	include ../blocks/modules/hero/hero.pug
+	//- Контент на desktop
+	section.s-section.section-content-main.section-content-desktop
+		.container
+			.row
+				.coll-8.block-1
+					.row
+						.coll-12
+							include ../blocks/components/card/card-xl.pug
+						.coll-6
+							+card-md('img/content/7','6', '#Обновления', 'Добавлена повторная публикация отклоненных файлов в стоки !')
+						.coll-6
+							+card-md('img/content/3','5', '#Экспертное_мнение', 'Добавлены несколько индикаторов цвета на один файл')
+				.coll-4.block-2
+					.row
+						.coll-12
+							include ../blocks/components/card/block-info.pug
+						.coll-12
+							+card-small('img/content/4','4', '#Обновления', 'Визуальное отображение загрузки')
+						.coll-12
+							article.card.card-small
+								a(href="#").card__img.card__img-svg.w160
+									+icon('photo-error', 'card-small__svg')
+									.date.card__date.card__date--tr.card__date--small
+										.card__date-number 2
+										.card__date-text мин
+								.card__body
+									a(href="#").tag.card__tag #Обучение
+									a(href="#").card__link
+											h2.h2-small.card__title Проблемы с FTP сервером Depositphotos
+									.autor.card__autor
+										span.autor__date 3 месяца назад
+										span.autor__name Галкин Жека
+			.row
+				.coll-12.block-3
+					include ../blocks/components/card/card-long.pug
+				.coll-6.block-4
+					article.card.card-small.card-small--long
+						a(href="#").card__img.card__img-svg.w220
+							+icon('error', 'card-small__svg')
+							.date.card__date.card__date--tr.card__date--small
+								.card__date-number 1
+								.card__date-text мин
+						.card__body
+							a(href="#").tag.card__tag #Обучение
+							a(href="#").card__link
+								h2.h2-md.card__title Технические работы на стоке
+							.card__text
+								p В связи с резко увеличившимися объемами загрузки и публикации файлов, наши серверные мощности не справились с работой
+							.autor.card__autor
+								span.autor__date 1 час назад
+								span.autor__name Галкин Жека
+				.coll-6.block-4
+					article.card.card-small.card-small--long
+						a(href="#").card__img.w220
+							+img('img/content/6','200','220','alt','data:image/gif;base64,R0lGODlhCgALAIAAAP///wAAACH5BAEAAAEALAAAAAAKAAsAAAIJjI+py+0Po0wFADs=')
+							.date.card__date.card__date--tr.card__date--small
+								.card__date-number 1
+								.card__date-text мин
+						.card__body
+							a(href="#").tag.card__tag #Обновления
+							a(href="#").card__link
+								h2.h2-md.card__title Добавлена возможность «Выбрать все стоки»
+							.card__text
+								p Это наш первый урок, на котором мы расскажем об основных инструментах сервиса
+							.autor.card__autor
+								span.autor__date 1 час назад
+								span.autor__name Галкин Жека
+			.row
+				.coll-8.block-6
+					.row
+						.coll-6
+							+card-md('img/content/7','5', '#Экспертное_мнение', 'Увеличено место в облачном хранилище')
+						.coll-6
+							+card-md('img/content/8','5', '#Экспертное_мнение', 'Улучшен процесс загрузки файлов по FTP')
+				.coll-4.block-7
+					.row
+						.coll-12
+							+card-small('img/content/9','4', '#Обновления', 'Улучшены вид и информативность релизов')
+						.coll-12
+							+card-small('img/content/10','2', '#Обучение', 'Добавлена возможность загрузки атрибутов в видео')
+	//- Контент на mobile ПОСЛЕДНИИ 4 НОВОСТИ
+	section.s-section.section-content-mobile
+		.container
+			.row
+				.coll-12
+					include ../blocks/components/card/block-info.pug
+				.coll-12
+					+card-md('img/content/1','5', '#Экспертное_мнение', 'Добавлены несколько индикаторов цвета на один файл')
+				.coll-12
+					+card-md('img/content/8','5', '#Экспертное_мнение', 'Добавлены несколько индикаторов цвета на один файл')
+				.coll-12
+					+card-md('img/content/2','6', '#Экспертное_мнение', 'Добавлены несколько индикаторов цвета на один файл')
+				.coll-12
+					+card-md('img/content/7','6', '#Экспертное_мнение', 'Добавлены несколько индикаторов цвета на один файл')
+
+block scripts
+	script(src="js/main.js")
+	script(src="js/vendor.js")

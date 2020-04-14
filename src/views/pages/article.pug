@@ -1,0 +1,26 @@
+extends ../layouts/default
+include ../../blocks/components/card/card-md.pug
+
+block variables
+	- const title = "article";
+	- const name = 'article-page'
+
+block content
+	//- hero block
+	include ../../blocks/modules/hero/hero.pug
+	//- content-article
+	section.s-section.section-content-article
+		.container
+			include ../../blocks/modules/article/article.pug
+	section.s-section.section-group-article
+		.container
+			.row
+				.coll-4
+					+card-md('img/content/7','6', '#Обновления', 'Увеличено место в облачном хранилище')
+				.coll-4
+					+card-md('img/content/8','5', '#Экспертное_мнение', 'Улучшен процесс загрузки файлов по FTP')
+				.coll-4
+					+card-md('img/content/3','5', '#Экспертное_мнение', 'Добавлены несколько индикаторов цвета на один файл')
+block scripts
+	script(src="js/main.js")
+	script(src="js/vendor.js")

@@ -1,0 +1,35 @@
+.social {
+	&__list {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__item:not(:last-child) {
+		margin-right: 32px;
+	}
+
+	&__link {
+
+		&:hover,
+		&:focus {
+
+			& .social__vk,
+			& .social__facebook,
+			& .social__telegram,
+			& .social__instagram {
+				fill: $gray;
+			}
+		}
+	}
+}
+
+.social__vk,
+.social__facebook,
+.social__telegram,
+.social__instagram {
+	width: 26px;
+	height: 26px;
+	fill: $gray-icon-hover;
+	transition: $transition;
+}

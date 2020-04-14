@@ -1,0 +1,13 @@
+.container.footer__container
+	.footer__body
+		.footer__switch-dark-mode
+			include ../../components/switch-dark-mode/switch-dark-mode.pug
+		if title == 'article'
+			.date.footer__date
+				.footer-date__number 6
+				.footer-date__text мин
+		.footer__block
+			a(href="#").footer__link Поделиться статьей
+			.footer__social
+				include ../../components/social/social.pug
+
